@@ -63,8 +63,8 @@ function QuoteModal({ plan, onClose }: { plan: Plan; onClose: () => void }) {
   };
 
   const inputClass = (field: keyof FormErrors) =>
-    `w-full bg-[#0F172A] border rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none transition-colors ${
-      errors[field] ? "border-red-500 focus:border-red-400" : "border-gray-700 focus:border-[#2563EB]"
+    `w-full bg-[#0a1f14] border rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none transition-colors ${
+      errors[field] ? "border-red-500 focus:border-red-400" : "border-gray-700 focus:border-[#2d9e6b]"
     }`;
 
   return (
@@ -85,17 +85,17 @@ function QuoteModal({ plan, onClose }: { plan: Plan; onClose: () => void }) {
             </div>
             <h3 className="text-2xl font-bold text-white mb-2">Request Sent!</h3>
             <p className="text-gray-400">
-              We'll get back to you within 24 hours to discuss the{" "}
-              <span className="text-[#2563EB] font-semibold">{plan.name}</span> plan.
+              We'll get back to you within 48 hours to discuss the{" "}
+              <span className="text-[#2d9e6b] font-semibold">{plan.name}</span> plan.
             </p>
-            <button onClick={onClose} className="mt-6 bg-[#2563EB] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#1d4ed8] transition-all">
+            <button onClick={onClose} className="mt-6 bg-[#2d9e6b] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#1a7a50] transition-all">
               Close
             </button>
           </div>
         ) : (
           <>
             <div className="mb-6">
-              <span className="text-xs font-semibold text-[#2563EB] uppercase tracking-wider">Get a Quote</span>
+              <span className="text-xs font-semibold text-[#2d9e6b] uppercase tracking-wider">Get a Quote</span>
               <h3 className="text-2xl font-bold text-white mt-1">{plan.name} Plan</h3>
               <p className="text-gray-400 text-sm mt-1">{plan.setup} setup · {plan.monthly}/month</p>
             </div>
@@ -129,10 +129,10 @@ function QuoteModal({ plan, onClose }: { plan: Plan; onClose: () => void }) {
                 {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}
               </div>
               <button onClick={handleSubmit}
-                className="w-full bg-[#2563EB] text-white py-4 rounded-xl font-semibold hover:bg-[#1d4ed8] transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50">
+                className="w-full bg-[#2d9e6b] text-white py-4 rounded-xl font-semibold hover:bg-[#1a7a50] transition-all shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50">
                 Send Request
               </button>
-              <p className="text-center text-xs text-gray-500">We'll respond within 24 hours.</p>
+              <p className="text-center text-xs text-gray-500">We'll respond within 48 hours.</p>
             </div>
           </>
         )}
@@ -218,7 +218,7 @@ export function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="bg-[#0F172A] text-white py-24 px-6">
+    <section id="pricing" className="bg-[#0a1f14] text-white py-24 px-6">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl lg:text-5xl font-bold text-center mb-3">Simple Pricing</h2>
         <p className="text-center text-gray-400 mb-20 text-sm">
@@ -246,14 +246,14 @@ export function Pricing() {
                   onClick={() => setActivePlan(plan.name)}
                   className={`rounded-3xl p-8 cursor-pointer transition-all duration-200 ${
                     isActive
-                      ? "bg-gradient-to-br from-[#2563EB] to-[#1d4ed8] border-2 border-white shadow-2xl shadow-blue-500/40 scale-[1.02]"
-                      : "bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 hover:border-[#2563EB] hover:shadow-xl hover:shadow-blue-500/20 hover:scale-[1.01]"
+                      ? "bg-gradient-to-br from-[#2d9e6b] to-[#1a7a50] border-2 border-white shadow-2xl shadow-emerald-500/40 scale-[1.02]"
+                      : "bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 hover:border-[#2d9e6b] hover:shadow-xl hover:shadow-emerald-500/20 hover:scale-[1.01]"
                   }`}
                 >
                   {/* Most Popular badge — only when Growth is active */}
                   {plan.featured && isActive && (
                     <div className="text-center mb-5">
-                      <span className="bg-white text-[#2563EB] px-4 py-1 rounded-full text-sm font-semibold">
+                      <span className="bg-white text-[#2d9e6b] px-4 py-1 rounded-full text-sm font-semibold">
                         Most Popular
                       </span>
                     </div>
@@ -288,7 +288,7 @@ export function Pricing() {
                         <p className={`text-sm leading-relaxed ${
                           feature.included
                             ? "text-white"
-                            : isActive ? "text-blue-300 opacity-50" : "text-gray-500"
+                            : isActive ? "text-emerald-300 opacity-50" : "text-gray-500"
                         }`}>
                           {feature.text}
                         </p>
@@ -303,8 +303,8 @@ export function Pricing() {
                     }}
                     className={`w-full py-4 rounded-xl font-semibold transition-all ${
                       isActive
-                        ? "bg-white text-[#2563EB] hover:bg-gray-100 shadow-lg"
-                        : "bg-[#2563EB] text-white hover:bg-[#1d4ed8] shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50"
+                        ? "bg-white text-[#2d9e6b] hover:bg-gray-100 shadow-lg"
+                        : "bg-[#2d9e6b] text-white hover:bg-[#1a7a50] shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50"
                     }`}
                   >
                     Get a Quote

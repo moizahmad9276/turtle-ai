@@ -9,9 +9,11 @@ import { Pricing } from "./components/Pricing";
 import { FounderTrust } from "./components/FounderTrust";
 import { FinalCTA } from "./components/FinalCTA";
 import { Footer } from "./components/Footer";
+import { BookDemoProvider } from "./components/useBookDemo";
 
 export default function App() {
   return (
+    <BookDemoProvider>
     <div className="w-full">
       <Header />
       <Hero />
@@ -25,5 +27,6 @@ export default function App() {
       <FinalCTA />
       <Footer />
     </div>
+    </BookDemoProvider>
   );
 }

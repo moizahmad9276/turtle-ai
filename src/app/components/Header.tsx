@@ -1,20 +1,22 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "../../assets/logo.png";
+import { useBookDemo } from "./useBookDemo";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { openBookDemo } = useBookDemo();
 
   return (
-    <header className="sticky top-0 z-50 bg-[#0F172A] border-b border-gray-800 backdrop-blur-sm bg-opacity-95">
+    <header className="sticky top-0 z-50 bg-[#0a1f14] border-b border-gray-800 backdrop-blur-sm bg-opacity-95">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <div className="flex items-center gap-3">
             <img 
               src={logo} 
-              alt="Himana AI" 
-              className="h-10 w-auto"
+              alt="TurtleAI" 
+              className="h-20 w-auto"
             />
           </div>
 
@@ -39,7 +41,7 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button className="bg-[#2563EB] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#1d4ed8] transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50">
+            <button onClick={openBookDemo} className="bg-[#2d9e6b] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#1a7a50] transition-all shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50">
               Book a Demo
             </button>
           </div>
@@ -72,7 +74,7 @@ export function Header() {
               <a href="#demo" className="text-gray-300 hover:text-white transition-colors">
                 Demo
               </a>
-              <button className="bg-[#2563EB] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#1d4ed8] transition-all mt-2">
+              <button onClick={openBookDemo} className="bg-[#2d9e6b] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#1a7a50] transition-all mt-2">
                 Book a Demo
               </button>
             </nav>

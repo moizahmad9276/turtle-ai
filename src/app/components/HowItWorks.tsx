@@ -43,7 +43,7 @@ export function HowItWorks() {
               <div key={index} className="flex gap-6 items-start">
                 {/* Step Number & Icon */}
                 <div className="flex flex-col items-center gap-3">
-                  <div className="w-16 h-16 bg-[#2563EB] text-white rounded-2xl flex items-center justify-center font-bold text-xl flex-shrink-0">
+                  <div className="w-16 h-16 bg-[#2d9e6b] text-white rounded-2xl flex items-center justify-center font-bold text-xl flex-shrink-0">
                     {index + 1}
                   </div>
                   {index < steps.length - 1 && (
@@ -54,9 +54,9 @@ export function HowItWorks() {
                 {/* Content */}
                 <div className="flex-1 bg-gray-50 rounded-2xl p-8 border border-gray-100">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#2563EB] bg-opacity-10 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-6 h-6 text-[#2563EB]" />
-                    </div>
+                    <div className="w-12 h-12 bg-emerald-700/20 rounded-xl flex items-center justify-center flex-shrink-0">
+  <Icon className="w-6 h-6 text-[#2d9e6b]" />
+</div>
                     <div>
                       <h3 className="text-2xl font-semibold text-[#111827] mb-2">
                         {step.title}

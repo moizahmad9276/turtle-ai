@@ -1,8 +1,10 @@
 import { MessageSquare, Users, Calendar, Mail } from "lucide-react";
+import { useBookDemo } from "./useBookDemo";
 
 export function Hero() {
+  const { openBookDemo } = useBookDemo();
   return (
-    <section className="bg-[#0F172A] text-white py-24 px-6 min-h-screen flex items-center">
+    <section className="bg-[#0a1f14] text-white py-24 px-6 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Side - Content */}
@@ -11,15 +13,18 @@ export function Hero() {
               AI Agents Built to Automate Your Business.
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
-              Himana AI designs and deploys AI agents that handle customer conversations, qualify leads, book appointments, and automate workflows — integrated into your existing tools.
+              TurtleAI designs and deploys AI agents that handle customer conversations, qualify leads, book appointments, and automate workflows — integrated into your existing tools.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-[#2563EB] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#1d4ed8] transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50">
+              <button onClick={openBookDemo} className="bg-[#2d9e6b] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#1a7a50] transition-all shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50">
                 Book a Demo
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#0F172A] transition-all">
-                See Use Cases
-              </button>
+              <button
+  onClick={() => document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" })}
+  className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#0a1f14] transition-all"
+>
+  See Use Cases
+</button>
             </div>
             <p className="text-gray-400 text-sm pt-4">
               Fast setup. Secure. Scalable.
@@ -32,7 +37,7 @@ export function Hero() {
               {/* Dashboard Header */}
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-700">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-[#2563EB] rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-[#2d9e6b] rounded-lg flex items-center justify-center">
                     <MessageSquare className="w-5 h-5" />
                   </div>
                   <div>
@@ -48,7 +53,7 @@ export function Hero() {
                 <p className="text-xs text-gray-400 mb-3">Chat Widget Preview</p>
                 <div className="space-y-3">
                   <div className="flex gap-2">
-                    <div className="w-6 h-6 bg-[#2563EB] rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-6 h-6 bg-[#2d9e6b] rounded-full flex items-center justify-center flex-shrink-0">
                       <MessageSquare className="w-3 h-3" />
                     </div>
                     <div className="bg-gray-800 rounded-lg rounded-tl-none p-3 text-sm">
@@ -56,7 +61,7 @@ export function Hero() {
                     </div>
                   </div>
                   <div className="flex justify-end">
-                    <div className="bg-[#2563EB] rounded-lg rounded-tr-none p-3 text-sm max-w-[200px]">
+                    <div className="bg-[#2d9e6b] rounded-lg rounded-tr-none p-3 text-sm max-w-[200px]">
                       I need information about your services
                     </div>
                   </div>
@@ -107,7 +112,7 @@ export function Hero() {
             </div>
 
             {/* Glow Effect */}
-            <div className="absolute -inset-4 bg-[#2563EB] opacity-20 blur-3xl -z-10 rounded-3xl"></div>
+            <div className="absolute -inset-4 bg-[#2d9e6b] opacity-20 blur-3xl -z-10 rounded-3xl"></div>
           </div>
         </div>
       </div>

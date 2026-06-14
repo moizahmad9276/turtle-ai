@@ -35,7 +35,7 @@ export function Solutions() {
   ];
 
   return (
-    <section id="solutions" className="bg-[#0F172A] text-white py-24 px-6">
+    <section id="solutions" className="bg-[#0a1f14] text-white py-24 px-6">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">
           Ready-to-Deploy Agent Solutions
@@ -47,11 +47,11 @@ export function Solutions() {
             return (
               <div
                 key={index}
-                className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-[#2563EB] transition-all group cursor-pointer"
+                className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-[#2d9e6b] transition-all group cursor-pointer"
               >
-                <div className="w-14 h-14 bg-[#2563EB] bg-opacity-20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-opacity-30 transition-all">
-                  <Icon className="w-7 h-7 text-[#2563EB]" />
-                </div>
+                <div className="w-14 h-14 bg-emerald-700/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-700/30 transition-all">
+  <Icon className="w-7 h-7 text-[#2d9e6b]" />
+</div>
                 <h3 className="text-xl font-semibold mb-3">
                   {solution.title}
                 </h3>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Zap, TrendingUp, Clock } from "lucide-react";
+import { useBookDemo } from "./useBookDemo";
 
 // Declare Voiceflow types for TypeScript
 declare global {
@@ -16,6 +17,7 @@ declare global {
 
 export function FeaturedUseCase() {
   const [chatLoaded, setChatLoaded] = useState(false);
+  const { openBookDemo } = useBookDemo();
 
  useEffect(() => {
   const interval = setInterval(() => {
@@ -54,11 +56,11 @@ export function FeaturedUseCase() {
   ];
 
   return (
-    <section id="demo" className="bg-[#0F172A] text-white py-24 px-6">
+    <section id="demo" className="bg-[#0a1f14] text-white py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <div className="inline-block bg-[#2563EB] bg-opacity-20 px-6 py-2 rounded-full mb-6">
-            <span className="text-[#2563EB] font-semibold">Featured Use Case</span>
+          <div className="inline-block bg-[#2d9e6b] bg-opacity-20 px-6 py-2 rounded-full mb-6">
+            <span className="text-white font-semibold">Featured Use Cases</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             Real Estate AI Lead Agent
@@ -67,76 +69,6 @@ export function FeaturedUseCase() {
             Automatically qualify buyers, answer property questions, capture contact details, and schedule viewings — 24/7 without human intervention.
           </p>
         </div>
-
-        {/* Live Demo Chat Panel */}
-        {/* <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 border border-gray-700 shadow-2xl mb-12">
-          <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-700">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-[#2563EB] rounded-full flex items-center justify-center">
-                <Bot className="w-6 h-6" />
-              </div>
-              <div>
-                <p className="font-semibold text-lg">Live Interactive Demo</p>
-                <p className="text-sm text-gray-400">Real Estate Lead Agent</p>
-              </div>
-            </div>
-            {chatLoaded && !loadError && (
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-sm text-green-400 font-medium">Ready</span>
-              </div>
-            )}
-          </div>
-
-          <div className="bg-gray-900 rounded-2xl p-6 min-h-[350px] flex items-center justify-center">
-            {loadError ? (
-              <div className="text-center space-y-4">
-                <div className="w-20 h-20 bg-red-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto">
-                  <Bot className="w-10 h-10 text-red-400" />
-                </div>
-                <p className="text-red-400 text-lg">
-                  Failed to load demo
-                </p>
-                <p className="text-gray-500 text-sm">
-                  Please refresh the page or contact support
-                </p>
-              </div>
-            ) : !chatLoaded ? (
-              <div className="text-center space-y-4">
-                <div className="w-20 h-20 bg-[#2563EB] bg-opacity-20 rounded-full flex items-center justify-center mx-auto">
-                  <Bot className="w-10 h-10 text-[#2563EB] animate-pulse" />
-                </div>
-                <p className="text-gray-400 text-lg">
-                  Loading interactive demo...
-                </p>
-                <p className="text-gray-500 text-sm">
-                  Get ready to see AI lead qualification in action
-                </p>
-              </div>
-            ) : (
-              <div className="text-center space-y-6">
-                <div className="w-20 h-20 bg-[#2563EB] bg-opacity-20 rounded-full flex items-center justify-center mx-auto">
-                  <MessageCircle className="w-10 h-10 text-[#2563EB]" />
-                </div>
-                <div>
-                  <p className="text-gray-300 text-lg font-semibold mb-2">
-                    Demo Ready to Launch
-                  </p>
-                  <p className="text-gray-500 text-sm">
-                    Click the button below or the chat bubble in the bottom-right corner to start the interactive demo
-                  </p>
-                </div>
-                <button
-                  onClick={openChat}
-                  className="inline-flex items-center gap-2 bg-[#2563EB] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1d4ed8] transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  Open Demo Chat
-                </button>
-              </div>
-            )}
-          </div>
-        </div> */}
 
         {/* Results Row */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -147,9 +79,9 @@ export function FeaturedUseCase() {
                 key={index}
                 className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 flex items-center gap-4"
               >
-                <div className="w-12 h-12 bg-[#2563EB] bg-opacity-20 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-6 h-6 text-[#2563EB]" />
-                </div>
+                <div className="w-12 h-12 bg-emerald-700/20 rounded-xl flex items-center justify-center flex-shrink-0">
+  <Icon className="w-6 h-6 text-[#2d9e6b]" />
+</div>
                 <p className="font-semibold text-lg">{result.label}</p>
               </div>
             );
@@ -160,11 +92,11 @@ export function FeaturedUseCase() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button 
             onClick={openChat}
-            className="bg-[#2563EB] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#1d4ed8] transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50"
+            className="bg-[#2d9e6b] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#1a7a50] transition-all shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50"
           >
             Open Demo Chat
           </button>
-          <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#0F172A] transition-all">
+          <button onClick={openBookDemo} className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#0a1f14] transition-all">
             Book a Demo
           </button>
         </div>
