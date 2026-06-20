@@ -3,6 +3,7 @@ import logo from "../../../assets/logo.png";
 import { PrivacyModal } from "../modals/PrivacyModal";
 import { TermsModal } from "../modals/TermsModal";
 import { useState } from "react";
+import { useLanguage } from "../../../context/LanguageContext";
 
 function TwitterIcon() {
   return (
@@ -37,6 +38,7 @@ function InstagramIcon() {
 }
 
 export function Footer() {
+   const { t } = useLanguage();
   const [showPrivacy, setShowPrivacy] = useState(false);
 const [showTerms, setShowTerms] = useState(false);
   return (
@@ -49,25 +51,25 @@ const [showTerms, setShowTerms] = useState(false);
               <img src={logo} alt="TurtleAI" className="h-20 w-auto" />
             </div>
             <p className="text-gray-400 leading-relaxed">
-              TurtleAI automates customer conversations, qualifies leads, and integrates with your business tools.
+                {t("footer.brandDescription")}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4">Quick Links</h3>
+            <h3 className="font-semibold mb-4">{t("footer.quickLinks")}</h3>
             <div className="space-y-2">
-              <a href="#solutions" className="block text-gray-400 hover:text-white transition-colors">Solutions</a>
-              <a href="#industries" className="block text-gray-400 hover:text-white transition-colors">Industries</a>
-              <a href="#how-it-works" className="block text-gray-400 hover:text-white transition-colors">How it Works</a>
-              <a href="#pricing" className="block text-gray-400 hover:text-white transition-colors">Pricing</a>
-              <a href="#demo" className="block text-gray-400 hover:text-white transition-colors">Demo</a>
+              <a href="#solutions" className="block text-gray-400 hover:text-white transition-colors">{t("footer.solutions")}</a>
+              <a href="#industries" className="block text-gray-400 hover:text-white transition-colors">{t("footer.industries")}</a>
+              <a href="#how-it-works" className="block text-gray-400 hover:text-white transition-colors">{t("footer.howItWorks")}</a>
+              <a href="#pricing" className="block text-gray-400 hover:text-white transition-colors">{t("footer.pricing")}</a>
+              <a href="#demo" className="block text-gray-400 hover:text-white transition-colors">{t("footer.demo")}</a>
             </div>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold mb-4">Contact</h3>
+            <h3 className="font-semibold mb-4">{t("footer.contact")}</h3>
             <div className="space-y-3">
               <a href="mailto:hello@turtleai.com" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
                 <Mail className="w-4 h-4" />
@@ -95,14 +97,14 @@ const [showTerms, setShowTerms] = useState(false);
 
         {/* Bottom Bar */}
         <div className="border-t border-emerald-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm">© 2026 TurtleAI. All rights reserved.</p>
+          <p className="text-gray-400 text-sm">{t("footer.copyright")}</p>
           <div className="flex gap-6 text-sm">
             <button onClick={() => setShowPrivacy(true)} className="text-gray-400 hover:text-white transition-colors">
-  Privacy Policy
-</button>
-<button onClick={() => setShowTerms(true)} className="text-gray-400 hover:text-white transition-colors">
-  Terms of Service
-</button>
+              {t("footer.privacyPolicy")}
+            </button>
+            <button onClick={() => setShowTerms(true)} className="text-gray-400 hover:text-white transition-colors">
+              {t("footer.termsOfService")}
+            </button>
 
 <PrivacyModal isOpen={showPrivacy} onClose={() => setShowPrivacy(false)} />
       <TermsModal isOpen={showTerms} onClose={() => setShowTerms(false)} />

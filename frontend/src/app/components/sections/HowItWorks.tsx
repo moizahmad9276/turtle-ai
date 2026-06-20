@@ -1,39 +1,41 @@
 import { Search, PenTool, Code, Rocket, BarChart } from "lucide-react";
+import { useLanguage } from "../../../context/LanguageContext";
 
 export function HowItWorks() {
+  const { t } = useLanguage();
   const steps = [
-    {
-      icon: Search,
-      title: "Discovery & Requirements",
-      description: "We understand your use case, workflows, and integration needs."
-    },
-    {
-      icon: PenTool,
-      title: "Agent Design (flows + knowledge)",
-      description: "Design conversation flows and train the AI on your specific business knowledge."
-    },
-    {
-      icon: Code,
-      title: "Build & Integrations",
-      description: "Connect to your CRM, calendar, website, WhatsApp, and other tools."
-    },
-    {
-      icon: Rocket,
-      title: "Testing & Deployment",
-      description: "Rigorous testing ensures the agent works perfectly before going live."
-    },
-    {
-      icon: BarChart,
-      title: "Monitoring & Optimization",
-      description: "Continuous monitoring and improvements based on real conversations."
-    }
-  ];
+  {
+    icon: Search,
+    title: t("howItWorks.step1.title"),
+    description: t("howItWorks.step1.desc")
+  },
+  {
+    icon: PenTool,
+    title: t("howItWorks.step2.title"),
+    description: t("howItWorks.step2.desc")
+  },
+  {
+    icon: Code,
+    title: t("howItWorks.step3.title"),
+    description: t("howItWorks.step3.desc")
+  },
+  {
+    icon: Rocket,
+    title: t("howItWorks.step4.title"),
+    description: t("howItWorks.step4.desc")
+  },
+  {
+    icon: BarChart,
+    title: t("howItWorks.step5.title"),
+    description: t("howItWorks.step5.desc")
+  }
+];
 
   return (
     <section id="how-it-works" className="bg-white py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl lg:text-5xl font-bold text-[#111827] text-center mb-16">
-          From Idea to Live Agent in Days
+          {t("howItWorks.title")}
         </h2>
 
         <div className="space-y-8">

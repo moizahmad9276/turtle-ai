@@ -2,9 +2,12 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "../../../assets/logo.png";
 import { useBookDemo } from "../../hooks/useBookDemo";
+import { LanguageSwitcher } from "../../../context/LanguageSwitcher";
+import { useLanguage } from "../../../context/LanguageContext";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
   const { openBookDemo } = useBookDemo();
 
   return (
@@ -23,26 +26,30 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <a href="#solutions" className="text-gray-300 hover:text-white transition-colors">
-              Solutions
+              {t("nav.solutions")}
             </a>
             <a href="#industries" className="text-gray-300 hover:text-white transition-colors">
-              Industries
+              {t("nav.industries")}
             </a>
             <a href="#how-it-works" className="text-gray-300 hover:text-white transition-colors">
-              How it Works
+              {t("nav.howItWorks")}
             </a>
             <a href="#pricing" className="text-gray-300 hover:text-white transition-colors">
-              Pricing
+              {t("nav.pricing")}
             </a>
             <a href="#demo" className="text-gray-300 hover:text-white transition-colors">
-              Demo
+              {t("nav.demo")}
             </a>
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <button onClick={openBookDemo} className="bg-[#2d9e6b] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#1a7a50] transition-all shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50">
-              Book a Demo
+          {/* CTA Button & Language Switcher Side-by-Side */}
+          <div className="hidden md:flex items-center gap-4">
+            <LanguageSwitcher />
+            <button 
+              onClick={openBookDemo} 
+              className="bg-[#2d9e6b] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#1a7a50] transition-all shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 whitespace-nowrap"
+            >
+              {t("nav.bookDemo")}
             </button>
           </div>
 
@@ -60,23 +67,26 @@ export function Header() {
           <div className="md:hidden py-6 border-t border-gray-800">
             <nav className="flex flex-col gap-4">
               <a href="#solutions" className="text-gray-300 hover:text-white transition-colors">
-                Solutions
+                {t("nav.solutions")}
               </a>
               <a href="#industries" className="text-gray-300 hover:text-white transition-colors">
-                Industries
+                {t("nav.industries")}
               </a>
               <a href="#how-it-works" className="text-gray-300 hover:text-white transition-colors">
-                How it Works
+                {t("nav.howItWorks")}
               </a>
               <a href="#pricing" className="text-gray-300 hover:text-white transition-colors">
-                Pricing
+                {t("nav.pricing")}
               </a>
               <a href="#demo" className="text-gray-300 hover:text-white transition-colors">
-                Demo
+                {t("nav.demo")}
               </a>
-              <button onClick={openBookDemo} className="bg-[#2d9e6b] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#1a7a50] transition-all mt-2">
-                Book a Demo
-              </button>
+              <div className="flex flex-col gap-4 pt-2 border-t border-gray-800">
+                <LanguageSwitcher />
+                <button onClick={openBookDemo} className="bg-[#2d9e6b] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#1a7a50] transition-all">
+                  {t("nav.bookDemo")}
+                </button>
+              </div>
             </nav>
           </div>
         )}

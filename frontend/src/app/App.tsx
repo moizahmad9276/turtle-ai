@@ -10,13 +10,17 @@ import { HowItWorks } from "./components/sections/HowItWorks";
 import { Pricing } from "./components/sections/Pricing";
 import { FounderTrust } from "./components/sections/FounderTrust";
 import { FinalCTA } from "./components/sections/FinalCTA";
+import { UseCases } from "./components/sections/Usecases";
+import { LanguageProvider } from "../context/LanguageContext";
 
 export default function App() {
   return (
+    <LanguageProvider>
     <BookDemoProvider>
     <div className="w-full">
       <Header />
       <Hero />
+      <UseCases />
       <ValueProps />
       <Solutions />
       <Industries />
@@ -28,5 +32,6 @@ export default function App() {
       <Footer />
     </div>
     </BookDemoProvider>
+    </LanguageProvider>
   );
 }

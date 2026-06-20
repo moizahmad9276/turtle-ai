@@ -1,26 +1,28 @@
 import { Users, Clock, Save, TrendingUp } from "lucide-react";
+import { useLanguage } from "../../../context/LanguageContext";
 
 export function Benefits() {
+  const { t } = useLanguage();
   const benefits = [
     {
       icon: Users,
-      title: "Capture More Qualified Leads",
-      description: "Convert website visitors into qualified prospects with intelligent conversations"
+      title: t("benefits.capture.title"),
+      description: t("benefits.capture.desc")
     },
     {
       icon: Clock,
-      title: "24/7 Availability",
-      description: "Never miss a lead. Your AI agent works around the clock, even while you sleep"
+      title: t("benefits.availability.title"),
+      description: t("benefits.availability.desc")
     },
     {
       icon: Save,
-      title: "Save Agent Time",
-      description: "Free up your team to focus on closings instead of answering basic questions"
+      title: t("benefits.save.title"),
+      description: t("benefits.save.desc")
     },
     {
       icon: TrendingUp,
-      title: "Increase Booked Viewings",
-      description: "Automatic scheduling means more viewings booked without manual coordination"
+      title: t("benefits.increase.title"),
+      description: t("benefits.increase.desc")
     }
   ];
 
@@ -28,7 +30,7 @@ export function Benefits() {
     <section className="bg-[#0a1f14] text-white py-24 px-6">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">
-          Transform Your Lead Generation
+          {t("benefits.title")}
         </h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

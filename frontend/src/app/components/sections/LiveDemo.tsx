@@ -1,11 +1,13 @@
 import { Bot, Send } from "lucide-react";
+import { useLanguage } from "../../../context/LanguageContext";
 
 export function LiveDemo() {
+  const { t } = useLanguage();
   return (
     <section className="bg-[#0a1f14] text-white py-24 px-6">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">
-          Experience TurtleAI in Action
+          {t("liveDemo.title")}
         </h2>
 
         {/* Embedded Chatbot Preview */}
@@ -17,8 +19,8 @@ export function LiveDemo() {
                 <Bot className="w-6 h-6" />
               </div>
               <div>
-                <p className="font-semibold text-lg">TurtleAI Demo</p>
-                <p className="text-sm text-gray-400">Try asking about properties</p>
+                <p className="font-semibold text-lg">{t("liveDemo.agentName")}</p>
+                <p className="text-sm text-gray-400">{t("liveDemo.agentSubtitle")}</p>
               </div>
             </div>
             <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
@@ -31,7 +33,7 @@ export function LiveDemo() {
                 <Bot className="w-10 h-10 text-[#2d9e6b]" />
               </div>
               <p className="text-gray-400 text-lg">
-                Start a conversation to see how our AI qualifies leads
+                {t("liveDemo.placeholder")}
               </p>
             </div>
           </div>
@@ -40,7 +42,7 @@ export function LiveDemo() {
           <div className="flex gap-3">
             <input
               type="text"
-              placeholder="Type a message..."
+              placeholder={t("liveDemo.inputPlaceholder")}
               className="flex-1 bg-gray-800 border border-gray-700 rounded-xl px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-[#2d9e6b] transition-colors"
               disabled
             />
@@ -51,7 +53,7 @@ export function LiveDemo() {
         </div>
 
         <p className="text-center text-gray-400 mt-8">
-          This is a live preview. Book a demo to see the full experience.
+          {t("liveDemo.footer")}
         </p>
       </div>
     </section>

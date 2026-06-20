@@ -1,32 +1,34 @@
 import { useState, useEffect, useRef } from "react";
 import { useBookDemo } from "../../hooks/useBookDemo";
+import { useLanguage } from "../../../context/LanguageContext";
 
 const industryDetails: Record<string, { useCases: string[]; example: string }> = {
-  "Real Estate": {
-    useCases: ["Qualify buyer & seller leads 24/7", "Schedule property viewings automatically", "Answer FAQs about listings", "Follow up with cold leads"],
-    example: "An agent that chats with website visitors, asks budget/location questions, qualifies them, and books a viewing — all without agent involvement."
+  "industries.realEstate": {
+    useCases: ["industries.re.uc1", "industries.re.uc2", "industries.re.uc3", "industries.re.uc4"],
+    example: "industries.re.example",
   },
-  "Healthcare": {
-    useCases: ["Book appointments & send reminders", "Answer patient FAQs", "Collect pre-visit information", "Handle insurance queries"],
-    example: "A clinic assistant that books appointments, collects symptoms in advance, and sends reminders — reducing no-shows by 40%."
+  "industries.healthcare": {
+    useCases: ["industries.hc.uc1", "industries.hc.uc2", "industries.hc.uc3", "industries.hc.uc4"],
+    example: "industries.hc.example",
   },
-  "E-commerce": {
-    useCases: ["Handle order tracking & returns", "Recommend products based on preferences", "Recover abandoned carts", "Answer shipping & policy questions"],
-    example: "A shopping assistant that recovers abandoned carts via WhatsApp and upsells related products during support conversations."
+  "industries.ecommerce": {
+    useCases: ["industries.ec.uc1", "industries.ec.uc2", "industries.ec.uc3", "industries.ec.uc4"],
+    example: "industries.ec.example",
   },
-  "Professional Services": {
-    useCases: ["Qualify inbound leads", "Book discovery calls automatically", "Answer service & pricing questions", "Collect client briefs"],
-    example: "A law firm assistant that qualifies leads, explains services, and books consultations — handling 80% of enquiries without staff."
+  "industries.professional": {
+    useCases: ["industries.ps.uc1", "industries.ps.uc2", "industries.ps.uc3", "industries.ps.uc4"],
+    example: "industries.ps.example",
   },
-  "Education": {
-    useCases: ["Answer admissions FAQs", "Guide students through enrollment", "Send course reminders", "Handle fee & schedule queries"],
-    example: "An enrollment agent that answers prospective student questions 24/7 and books campus tours or demo classes automatically."
+  "industries.education": {
+    useCases: ["industries.ed.uc1", "industries.ed.uc2", "industries.ed.uc3", "industries.ed.uc4"],
+    example: "industries.ed.example",
   },
-  "SaaS": {
-    useCases: ["Onboard new users conversationally", "Handle support tickets & FAQs", "Qualify trial users for sales", "Gather product feedback"],
-    example: "A support agent that resolves 70% of tier-1 tickets automatically and escalates complex issues to the right team member."
-  }
+  "industries.saas": {
+    useCases: ["industries.saas.uc1", "industries.saas.uc2", "industries.saas.uc3", "industries.saas.uc4"],
+    example: "industries.saas.example",
+  },
 };
+
 
 const industries = Object.keys(industryDetails);
 
@@ -35,6 +37,7 @@ export function Industries() {
   const [paused, setPaused] = useState(false);
   const { openBookDemo } = useBookDemo();
   const sectionRef = useRef<HTMLElement>(null);
+const { t } = useLanguage();
 
   // Auto-rotate unless paused
   useEffect(() => {
@@ -66,7 +69,7 @@ export function Industries() {
     <section ref={sectionRef} id="industries" className="bg-white py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl lg:text-5xl font-bold text-[#111827] text-center mb-12">
-          Built for Multiple Industries
+          {t("industries.title")}
         </h2>
 
         <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -83,32 +86,32 @@ export function Industries() {
                   : "bg-gray-50 border-gray-200 hover:border-[#2d9e6b] text-[#111827]"
               }`}
             >
-              {industry}
+              {t(industry)}
             </button>
           ))}
         </div>
 
         <div className="bg-gray-50 border-2 border-[#2d9e6b] rounded-2xl p-8">
           <h3 className="text-2xl font-bold text-[#111827] mb-6">
-            TurtleAI for <span className="text-[#2d9e6b]">{industries[selected]}</span>
+            {t("industries.turtleAIFor")} <span className="text-[#2d9e6b]">{t(industries[selected])}</span>
           </h3>
 
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <p className="text-[#2d9e6b] font-semibold uppercase tracking-wider text-xs mb-4">What we automate</p>
+              <p className="text-[#2d9e6b] font-semibold uppercase tracking-wider text-xs mb-4">{t("industries.whatWeAutomate")}</p>
               <ul className="space-y-3">
                 {detail.useCases.map((uc, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <span className="w-2 h-2 bg-[#2d9e6b] rounded-full mt-2 flex-shrink-0" />
-                    <span className="text-gray-600">{uc}</span>
+                    <span className="text-gray-600">{t(uc)}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className="bg-white border border-gray-200 rounded-xl p-6">
-              <p className="text-[#2d9e6b] font-semibold uppercase tracking-wider text-xs mb-3">Real example</p>
-              <p className="text-gray-600 leading-relaxed">{detail.example}</p>
+              <p className="text-[#2d9e6b] font-semibold uppercase tracking-wider text-xs mb-3">{t("industries.realExample")}</p>
+              <p className="text-gray-600 leading-relaxed">{t(detail.example)}</p>
             </div>
           </div>
 
@@ -116,7 +119,7 @@ export function Industries() {
             onClick={openBookDemo}
             className="mt-8 bg-[#2d9e6b] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1a7a50] transition-all shadow-lg shadow-emerald-500/30"
           >
-            Build this for my business →
+            {t("industries.cta")}
           </button>
         </div>
       </div>

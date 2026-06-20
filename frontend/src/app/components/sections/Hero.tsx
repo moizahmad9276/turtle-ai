@@ -1,7 +1,9 @@
 import { MessageSquare, Users, Calendar, Mail } from "lucide-react";
 import { useBookDemo } from "../../hooks/useBookDemo";
+import { useLanguage } from "../../../context/LanguageContext";
 
 export function Hero() {
+  const { t } = useLanguage();
   const { openBookDemo } = useBookDemo();
   return (
     <section className="bg-[#0a1f14] text-white py-24 px-6 min-h-screen flex items-center">
@@ -10,24 +12,24 @@ export function Hero() {
           {/* Left Side - Content */}
           <div className="space-y-8">
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-              AI Agents Built to Automate Your Business.
+             {t("hero.title")}
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
-              TurtleAI designs and deploys AI agents that handle customer conversations, qualify leads, book appointments, and automate workflows — integrated into your existing tools.
+              {t("hero.subtitle")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button onClick={openBookDemo} className="bg-[#2d9e6b] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#1a7a50] transition-all shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50">
-                Book a Demo
+                {t("hero.bookDemo")}
               </button>
               <button
-  onClick={() => document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" })}
+  onClick={() => document.getElementById("use-cases")?.scrollIntoView({ behavior: "smooth" })}
   className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#0a1f14] transition-all"
 >
-  See Use Cases
+  {t("hero.seeUseCases")}
 </button>
             </div>
             <p className="text-gray-400 text-sm pt-4">
-              Fast setup. Secure. Scalable.
+              {t("hero.fastSetup")}
             </p>
           </div>
 
@@ -41,8 +43,8 @@ export function Hero() {
                     <MessageSquare className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-semibold">AI Agent Dashboard</p>
-                    <p className="text-xs text-gray-400">Live & Active</p>
+                    <p className="font-semibold">{t("hero.dashboard")}</p>
+                    <p className="text-xs text-gray-400">{t("hero.liveActive")}</p>
                   </div>
                 </div>
                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
@@ -50,19 +52,19 @@ export function Hero() {
 
               {/* Chat Widget Preview */}
               <div className="bg-gray-900 rounded-xl p-4 mb-4">
-                <p className="text-xs text-gray-400 mb-3">Chat Widget Preview</p>
+                <p className="text-xs text-gray-400 mb-3">{t("hero.chatWidgetPreview")}</p>
                 <div className="space-y-3">
                   <div className="flex gap-2">
                     <div className="w-6 h-6 bg-[#2d9e6b] rounded-full flex items-center justify-center flex-shrink-0">
                       <MessageSquare className="w-3 h-3" />
                     </div>
                     <div className="bg-gray-800 rounded-lg rounded-tl-none p-3 text-sm">
-                      How can I help you today?
+                      {t("hero.chatPreview")}
                     </div>
                   </div>
                   <div className="flex justify-end">
                     <div className="bg-[#2d9e6b] rounded-lg rounded-tr-none p-3 text-sm max-w-[200px]">
-                      I need information about your services
+                      {t("hero.chatMessage")}
                     </div>
                   </div>
                 </div>
@@ -70,42 +72,42 @@ export function Hero() {
 
               {/* Lead Captured Fields */}
               <div className="bg-gray-900 rounded-xl p-4 mb-4">
-                <p className="text-xs text-gray-400 mb-3">Lead Captured</p>
+                <p className="text-xs text-gray-400 mb-3">{t("hero.leadCaptured")}</p>
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-400">Name:</span>
+                    <span className="text-gray-400">{t("hero.name")}</span>
                     <span>John Smith</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-400">Email:</span>
+                    <span className="text-gray-400">{t("hero.email")}</span>
                     <span>john@company.com</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-400">Intent:</span>
-                    <span className="text-green-400">Qualified</span>
+                    <span className="text-gray-400">{t("hero.intent")}</span>
+                    <span className="text-green-400">{t("hero.qualified")}</span>
                   </div>
                 </div>
               </div>
 
               {/* Integrations */}
               <div className="bg-gray-900 rounded-xl p-4">
-                <p className="text-xs text-gray-400 mb-3">Active Integrations</p>
+                <p className="text-xs text-gray-400 mb-3">{t("hero.activeIntegrations")}</p>
                 <div className="flex gap-3">
                   <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700">
                     <Users className="w-5 h-5 text-gray-400" />
-                    <span className="sr-only">CRM</span>
+                    <span className="sr-only">{t("hero.crm")}</span>
                   </div>
                   <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700">
                     <Calendar className="w-5 h-5 text-gray-400" />
-                    <span className="sr-only">Calendar</span>
+                    <span className="sr-only">{t("hero.calendar")}</span>
                   </div>
                   <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700">
                     <Mail className="w-5 h-5 text-gray-400" />
-                    <span className="sr-only">Email</span>
+                    <span className="sr-only">{t("hero.email")}</span>
                   </div>
                   <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700">
                     <MessageSquare className="w-5 h-5 text-gray-400" />
-                    <span className="sr-only">WhatsApp</span>
+                    <span className="sr-only">{t("hero.whatsapp")}</span>
                   </div>
                 </div>
               </div>

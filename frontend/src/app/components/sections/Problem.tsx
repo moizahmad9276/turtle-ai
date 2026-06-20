@@ -1,34 +1,21 @@
 import { UserX, Clock, TrendingDown, Globe } from "lucide-react";
+import { useLanguage } from "../../../context/LanguageContext";
+
+const problems = [
+  { icon: UserX,       title: "problem.visitors.title",     description: "problem.visitors.desc" },
+  { icon: Clock,       title: "problem.agents.title",       description: "problem.agents.desc" },
+  { icon: TrendingDown, title: "problem.slow.title",        description: "problem.slow.desc" },
+  { icon: Globe,       title: "problem.international.title", description: "problem.international.desc" },
+];
 
 export function Problem() {
-  const problems = [
-    {
-      icon: UserX,
-      title: "Visitors leave without contacting you",
-      description: "70% of website visitors never fill out a contact form"
-    },
-    {
-      icon: Clock,
-      title: "Agents waste time on unqualified inquiries",
-      description: "Hours spent answering basic questions from non-serious buyers"
-    },
-    {
-      icon: TrendingDown,
-      title: "Slow response time reduces conversions",
-      description: "Leads go cold when they don't get immediate responses"
-    },
-    {
-      icon: Globe,
-      title: "International buyers expect instant answers",
-      description: "Global clients need 24/7 support across all time zones"
-    }
-  ];
+  const { t } = useLanguage();
 
   return (
     <section className="bg-white py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl lg:text-5xl font-bold text-[#1F2937] text-center mb-16">
-          Most Real Estate Agencies Lose Qualified Buyers
+          {t("problem.title")}
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -43,10 +30,10 @@ export function Problem() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-[#1F2937] mb-2">
-                    {problem.title}
+                    {t(problem.title)}
                   </h3>
                   <p className="text-gray-600">
-                    {problem.description}
+                    {t(problem.description)}
                   </p>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Zap, TrendingUp, Clock } from "lucide-react";
 import { useBookDemo } from "../../hooks/useBookDemo";
+import { useLanguage } from "../../../context/LanguageContext";
 
 // Declare Voiceflow types for TypeScript
 declare global {
@@ -18,6 +19,7 @@ declare global {
 export function FeaturedUseCase() {
   const [chatLoaded, setChatLoaded] = useState(false);
   const { openBookDemo } = useBookDemo();
+  const { t } = useLanguage();
 
  useEffect(() => {
   const interval = setInterval(() => {
@@ -43,15 +45,15 @@ export function FeaturedUseCase() {
   const results = [
     {
       icon: Zap,
-      label: "80% faster response time"
+      label: t("featured.stat1")
     },
     {
       icon: TrendingUp,
-      label: "3x more qualified leads"
+      label: t("featured.stat2")
     },
     {
       icon: Clock,
-      label: "24/7 automated support"
+      label: t("featured.stat3")
     }
   ];
 
@@ -60,13 +62,13 @@ export function FeaturedUseCase() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <div className="inline-block bg-[#2d9e6b] bg-opacity-20 px-6 py-2 rounded-full mb-6">
-            <span className="text-white font-semibold">Featured Use Cases</span>
+            <span className="text-white font-semibold">{t("featured.eyebrow")}</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Real Estate AI Lead Agent
+            {t("featured.title")}
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Automatically qualify buyers, answer property questions, capture contact details, and schedule viewings — 24/7 without human intervention.
+            {t("featured.subtitle")}
           </p>
         </div>
 
@@ -94,10 +96,10 @@ export function FeaturedUseCase() {
             onClick={openChat}
             className="bg-[#2d9e6b] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#1a7a50] transition-all shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50"
           >
-            Open Demo Chat
+            {t("featured.openChat")}
           </button>
           <button onClick={openBookDemo} className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#0a1f14] transition-all">
-            Book a Demo
+            {t("featured.bookDemo")}
           </button>
         </div>
       </div>
