@@ -10,7 +10,11 @@ export async function getTranslations(req: Request, res: Response) {
   const lang = (req.query.lang as string)?.toLowerCase() ?? "en";
 
   if (!SUPPORTED_LANGUAGES.includes(lang)) {
-    return res.status(400).json({ error: `Unsupported language: ${lang}. Supported: ${SUPPORTED_LANGUAGES.join(", ")}` });
+    return res
+      .status(400)
+      .json({
+        error: `Unsupported language: ${lang}. Supported: ${SUPPORTED_LANGUAGES.join(", ")}`,
+      });
   }
 
   try {
@@ -20,10 +24,13 @@ export async function getTranslations(req: Request, res: Response) {
     });
 
     // Convert array to key-value object
-    const translations = rows.reduce((acc, row) => {
-      acc[row.key] = row.value;
-      return acc;
-    }, {} as Record<string, string>);
+    const translations = rows.reduce(
+      (acc, row) => {
+        acc[row.key] = row.value;
+        return acc;
+      },
+      {} as Record<string, string>,
+    );
 
     res.setHeader("Cache-Control", "public, max-age=3600"); // cache 1 hour
     return res.json({ language: lang, translations });
@@ -41,9 +48,13 @@ export async function getSupportedLanguages(_req: Request, res: Response) {
       { code: "de", name: "Deutsch", flag: "https://flagcdn.com/w40/de.png" },
       { code: "fr", name: "Français", flag: "https://flagcdn.com/w40/fr.png" },
       { code: "es", name: "Español", flag: "https://flagcdn.com/w40/es.png" },
-      { code: "uk", name: "Українська", flag: "https://flagcdn.com/w40/ua.png" }, // Note: ua for Ukraine
-      { code: "ar", name: "العربية", flag: "https://flagcdn.com/w40/sa.png" }, 
-      { code: "ur", name: "اردو", flag: "https://flagcdn.com/w40/pk.png" },   // Note: pk for Pakistan
-    ]
+      {
+        code: "uk",
+        name: "Українська",
+        flag: "https://flagcdn.com/w40/ua.png",
+      },
+      { code: "ar", name: "العربية", flag: "https://flagcdn.com/w40/sa.png" },
+      { code: "ur", name: "اردو", flag: "https://flagcdn.com/w40/pk.png" },
+    ],
   });
 }

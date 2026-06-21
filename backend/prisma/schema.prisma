@@ -13,6 +13,7 @@ model Translation {
   key        String
   language   String   @db.Char(2)
   value      String   @db.Text
+  sourceHash  String?
   updatedAt  DateTime @default(now()) @updatedAt
 
   @@unique([key, language])

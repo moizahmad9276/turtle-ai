@@ -16,22 +16,22 @@ import { LanguageProvider } from "../context/LanguageContext";
 export default function App() {
   return (
     <LanguageProvider>
-    <BookDemoProvider>
-    <div className="w-full">
-      <Header />
-      <Hero />
-      <UseCases />
-      <ValueProps />
-      <Solutions />
-      <Industries />
-      <FeaturedUseCase />
-      <HowItWorks />
-      <Pricing />
-      <FounderTrust />
-      <FinalCTA />
-      <Footer />
-    </div>
-    </BookDemoProvider>
+      <BookDemoProvider>
+        <div className="w-full">
+          <Header />
+          <Hero />
+          <UseCases />
+          <ValueProps />
+          <Solutions />
+          <Industries />
+          <FeaturedUseCase />
+          <HowItWorks />
+          <Pricing />
+          <FounderTrust />
+          <FinalCTA />
+          <Footer />
+        </div>
+      </BookDemoProvider>
     </LanguageProvider>
   );
 }

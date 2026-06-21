@@ -5,6 +5,21 @@ import { TermsModal } from "../modals/TermsModal";
 import { useState } from "react";
 import { useLanguage } from "../../../context/LanguageContext";
 
+const navLinks = [
+  { href: "#solutions", key: "footer.solutions" },
+  { href: "#industries", key: "footer.industries" },
+  { href: "#how-it-works", key: "footer.howItWorks" },
+  { href: "#pricing", key: "footer.pricing" },
+  { href: "#demo", key: "footer.demo" },
+];
+
+const socialLinks = [
+  { icon: TwitterIcon, label: "Twitter" },
+  { icon: LinkedinIcon, label: "LinkedIn" },
+  { icon: GithubIcon, label: "GitHub" },
+  { icon: InstagramIcon, label: "Instagram" },
+];
+
 function TwitterIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -38,9 +53,9 @@ function InstagramIcon() {
 }
 
 export function Footer() {
-   const { t } = useLanguage();
+  const { t } = useLanguage();
   const [showPrivacy, setShowPrivacy] = useState(false);
-const [showTerms, setShowTerms] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
   return (
     <footer className="bg-[#0a1f14] border-t border-emerald-900 text-white py-12 px-6">
       <div className="max-w-7xl mx-auto">
@@ -51,7 +66,7 @@ const [showTerms, setShowTerms] = useState(false);
               <img src={logo} alt="TurtleAI" className="h-20 w-auto" />
             </div>
             <p className="text-gray-400 leading-relaxed">
-                {t("footer.brandDescription")}
+              {t("footer.brandDescription")}
             </p>
           </div>
 
@@ -59,11 +74,11 @@ const [showTerms, setShowTerms] = useState(false);
           <div>
             <h3 className="font-semibold mb-4">{t("footer.quickLinks")}</h3>
             <div className="space-y-2">
-              <a href="#solutions" className="block text-gray-400 hover:text-white transition-colors">{t("footer.solutions")}</a>
-              <a href="#industries" className="block text-gray-400 hover:text-white transition-colors">{t("footer.industries")}</a>
-              <a href="#how-it-works" className="block text-gray-400 hover:text-white transition-colors">{t("footer.howItWorks")}</a>
-              <a href="#pricing" className="block text-gray-400 hover:text-white transition-colors">{t("footer.pricing")}</a>
-              <a href="#demo" className="block text-gray-400 hover:text-white transition-colors">{t("footer.demo")}</a>
+              {navLinks.map(({ href, key }) => (
+                <a key={key} href={href} className="block text-gray-400 hover:text-white transition-colors">
+                  {t(key)}
+                </a>
+              ))}
             </div>
           </div>
 
@@ -71,25 +86,22 @@ const [showTerms, setShowTerms] = useState(false);
           <div>
             <h3 className="font-semibold mb-4">{t("footer.contact")}</h3>
             <div className="space-y-3">
-              <a href="mailto:hello@turtleai.com" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+              <a
+                href="mailto:hello@turtleai.com"
+                className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+              >
                 <Mail className="w-4 h-4" />
                 hello@turtleai.com
               </a>
 
               {/* Social Icons */}
               <div className="flex gap-3 pt-4">
-                <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#2d9e6b] transition-all" aria-label="Twitter">
-                  <TwitterIcon />
-                </a>
-                <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#2d9e6b] transition-all" aria-label="LinkedIn">
-                  <LinkedinIcon />
-                </a>
-                <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#2d9e6b] transition-all" aria-label="GitHub">
-                  <GithubIcon />
-                </a>
-                <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#2d9e6b] transition-all" aria-label="Instagram">
-                  <InstagramIcon />
-                </a>
+                {socialLinks.map(({ icon: Icon, label }) => (
+                  <a key={label} href="#" aria-label={label}
+                    className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#2d9e6b] transition-all">
+                    <Icon />
+                  </a>
+                ))}
               </div>
             </div>
           </div>
@@ -99,15 +111,27 @@ const [showTerms, setShowTerms] = useState(false);
         <div className="border-t border-emerald-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">{t("footer.copyright")}</p>
           <div className="flex gap-6 text-sm">
-            <button onClick={() => setShowPrivacy(true)} className="text-gray-400 hover:text-white transition-colors">
+            <button
+              onClick={() => setShowPrivacy(true)}
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               {t("footer.privacyPolicy")}
             </button>
-            <button onClick={() => setShowTerms(true)} className="text-gray-400 hover:text-white transition-colors">
+            <button
+              onClick={() => setShowTerms(true)}
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               {t("footer.termsOfService")}
             </button>
 
-<PrivacyModal isOpen={showPrivacy} onClose={() => setShowPrivacy(false)} />
-      <TermsModal isOpen={showTerms} onClose={() => setShowTerms(false)} />
+            <PrivacyModal
+              isOpen={showPrivacy}
+              onClose={() => setShowPrivacy(false)}
+            />
+            <TermsModal
+              isOpen={showTerms}
+              onClose={() => setShowTerms(false)}
+            />
           </div>
         </div>
       </div>

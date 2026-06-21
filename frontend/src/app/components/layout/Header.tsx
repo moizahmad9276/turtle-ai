@@ -4,6 +4,15 @@ import logo from "../../../assets/logo.png";
 import { useBookDemo } from "../../hooks/useBookDemo";
 import { LanguageSwitcher } from "../../../context/LanguageSwitcher";
 import { useLanguage } from "../../../context/LanguageContext";
+import { GreenButton } from "../ui/GreenButton";
+
+const navLinks = [
+  { href: "#solutions", key: "nav.solutions" },
+  { href: "#industries", key: "nav.industries" },
+  { href: "#how-it-works", key: "nav.howItWorks" },
+  { href: "#pricing", key: "nav.pricing" },
+  { href: "#demo", key: "nav.demo" },
+];
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -16,41 +25,20 @@ export function Header() {
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <img 
-              src={logo} 
-              alt="TurtleAI" 
-              className="h-20 w-auto"
-            />
+            <img src={logo} alt="TurtleAI" className="h-20 w-auto" />
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#solutions" className="text-gray-300 hover:text-white transition-colors">
-              {t("nav.solutions")}
+          {navLinks.map(({ href, key }) => (
+            <a key={key} href={href} className="text-gray-300 hover:text-white transition-colors">
+              {t(key)}
             </a>
-            <a href="#industries" className="text-gray-300 hover:text-white transition-colors">
-              {t("nav.industries")}
-            </a>
-            <a href="#how-it-works" className="text-gray-300 hover:text-white transition-colors">
-              {t("nav.howItWorks")}
-            </a>
-            <a href="#pricing" className="text-gray-300 hover:text-white transition-colors">
-              {t("nav.pricing")}
-            </a>
-            <a href="#demo" className="text-gray-300 hover:text-white transition-colors">
-              {t("nav.demo")}
-            </a>
-          </nav>
+          ))}
 
           {/* CTA Button & Language Switcher Side-by-Side */}
           <div className="hidden md:flex items-center gap-4">
             <LanguageSwitcher />
-            <button 
-              onClick={openBookDemo} 
-              className="bg-[#2d9e6b] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#1a7a50] transition-all shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 whitespace-nowrap"
-            >
-              {t("nav.bookDemo")}
-            </button>
+            <GreenButton onClick={openBookDemo}>{t("nav.bookDemo")}</GreenButton>
           </div>
 
           {/* Mobile Menu Button */}
@@ -58,36 +46,22 @@ export function Header() {
             className="md:hidden text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden py-6 border-t border-gray-800">
-            <nav className="flex flex-col gap-4">
-              <a href="#solutions" className="text-gray-300 hover:text-white transition-colors">
-                {t("nav.solutions")}
+            {navLinks.map(({ href, key }) => (
+              <a key={key} href={href} className="text-gray-300 hover:text-white transition-colors">
+                {t(key)}
               </a>
-              <a href="#industries" className="text-gray-300 hover:text-white transition-colors">
-                {t("nav.industries")}
-              </a>
-              <a href="#how-it-works" className="text-gray-300 hover:text-white transition-colors">
-                {t("nav.howItWorks")}
-              </a>
-              <a href="#pricing" className="text-gray-300 hover:text-white transition-colors">
-                {t("nav.pricing")}
-              </a>
-              <a href="#demo" className="text-gray-300 hover:text-white transition-colors">
-                {t("nav.demo")}
-              </a>
-              <div className="flex flex-col gap-4 pt-2 border-t border-gray-800">
-                <LanguageSwitcher />
-                <button onClick={openBookDemo} className="bg-[#2d9e6b] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#1a7a50] transition-all">
-                  {t("nav.bookDemo")}
-                </button>
-              </div>
-            </nav>
+            ))}
           </div>
         )}
       </div>

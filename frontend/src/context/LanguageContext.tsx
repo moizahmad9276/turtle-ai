@@ -29,12 +29,12 @@ interface LanguageContextValue {
 // ─── Supported languages (static list for the switcher) ──────────────────────
 export const LANGUAGES: Language[] = [
   { code: "en", name: "English", flag: "https://flagcdn.com/w40/gb.png" },
-      { code: "de", name: "Deutsch", flag: "https://flagcdn.com/w40/de.png" },
-      { code: "fr", name: "Français", flag: "https://flagcdn.com/w40/fr.png" },
-      { code: "es", name: "Español", flag: "https://flagcdn.com/w40/es.png" },
-      { code: "uk", name: "Українська", flag: "https://flagcdn.com/w40/ua.png" }, // Note: ua for Ukraine
-      { code: "ar", name: "العربية", flag: "https://flagcdn.com/w40/sa.png" }, 
-      { code: "ur", name: "اردو", flag: "https://flagcdn.com/w40/pk.png" },   // Note: pk for Pakistan
+  { code: "de", name: "Deutsch", flag: "https://flagcdn.com/w40/de.png" },
+  { code: "fr", name: "Français", flag: "https://flagcdn.com/w40/fr.png" },
+  { code: "es", name: "Español", flag: "https://flagcdn.com/w40/es.png" },
+  { code: "uk", name: "Українська", flag: "https://flagcdn.com/w40/ua.png" }, // Note: ua for Ukraine
+  { code: "ar", name: "العربية", flag: "https://flagcdn.com/w40/sa.png" },
+  { code: "ur", name: "اردو", flag: "https://flagcdn.com/w40/pk.png" }, // Note: pk for Pakistan
 ];
 
 const RTL_LANGUAGES: LanguageCode[] = ["ar", "ur"];
@@ -59,7 +59,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     return (localStorage.getItem("turtleai_lang") as LanguageCode) || "en";
   });
 
-  const [translations, setTranslations] = useState<Record<string, string>>(enFallback);
+  const [translations, setTranslations] =
+    useState<Record<string, string>>(enFallback);
   const [loading, setLoading] = useState(false);
 
   const isRTL = RTL_LANGUAGES.includes(language);
@@ -97,11 +98,15 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       if (cached) {
         const { data } = JSON.parse(cached);
         setTranslations(data);
-        console.warn(`[i18n] Backend unreachable — using stale cache for [${lang}]`);
+        console.warn(
+          `[i18n] Backend unreachable — using stale cache for [${lang}]`,
+        );
       } else {
         // 4. No cache — fallback to English
         setTranslations(enFallback);
-        console.warn(`[i18n] Backend unreachable, no cache — falling back to English`);
+        console.warn(
+          `[i18n] Backend unreachable, no cache — falling back to English`,
+        );
       }
     } finally {
       setLoading(false);
@@ -120,7 +125,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     // Save to cache
     localStorage.setItem(
       CACHE_KEY(lang),
-      JSON.stringify({ data: merged, timestamp: Date.now() })
+      JSON.stringify({ data: merged, timestamp: Date.now() }),
     );
   }
 
@@ -145,7 +150,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     (key: string): string => {
       return translations[key] ?? enFallback[key] ?? key;
     },
-    [translations]
+    [translations],
   );
 
   return (

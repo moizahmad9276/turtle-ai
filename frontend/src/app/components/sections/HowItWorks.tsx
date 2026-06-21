@@ -1,77 +1,73 @@
 import { Search, PenTool, Code, Rocket, BarChart } from "lucide-react";
 import { useLanguage } from "../../../context/LanguageContext";
+import { IconBox } from "../ui/IconBox";
+import { SectionHeader } from "../ui/SectionHeader";
 
-export function HowItWorks() {
-  const { t } = useLanguage();
-  const steps = [
+const steps = [
   {
     icon: Search,
-    title: t("howItWorks.step1.title"),
-    description: t("howItWorks.step1.desc")
+    title: "howItWorks.step1.title",
+    description: "howItWorks.step1.desc",
   },
   {
     icon: PenTool,
-    title: t("howItWorks.step2.title"),
-    description: t("howItWorks.step2.desc")
+    title: "howItWorks.step2.title",
+    description: "howItWorks.step2.desc",
   },
   {
     icon: Code,
-    title: t("howItWorks.step3.title"),
-    description: t("howItWorks.step3.desc")
+    title: "howItWorks.step3.title",
+    description: "howItWorks.step3.desc",
   },
   {
     icon: Rocket,
-    title: t("howItWorks.step4.title"),
-    description: t("howItWorks.step4.desc")
+    title: "howItWorks.step4.title",
+    description: "howItWorks.step4.desc",
   },
   {
     icon: BarChart,
-    title: t("howItWorks.step5.title"),
-    description: t("howItWorks.step5.desc")
-  }
+    title: "howItWorks.step5.title",
+    description: "howItWorks.step5.desc",
+  },
 ];
+
+export function HowItWorks() {
+  const { t } = useLanguage();
 
   return (
     <section id="how-it-works" className="bg-white py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl lg:text-5xl font-bold text-[#111827] text-center mb-16">
-          {t("howItWorks.title")}
-        </h2>
+        <SectionHeader title={t("howItWorks.title")} light={false} />
 
         <div className="space-y-8">
-          {steps.map((step, index) => {
-            const Icon = step.icon;
-            return (
-              <div key={index} className="flex gap-6 items-start">
-                {/* Step Number & Icon */}
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-16 h-16 bg-[#2d9e6b] text-white rounded-2xl flex items-center justify-center font-bold text-xl flex-shrink-0">
-                    {index + 1}
-                  </div>
-                  {index < steps.length - 1 && (
-                    <div className="w-1 h-16 bg-gray-200"></div>
-                  )}
+          {steps.map((step, index) => (
+            <div key={index} className="flex gap-6 items-start">
+              {/* Step number + connector line */}
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-16 h-16 bg-[#2d9e6b] text-white rounded-2xl flex items-center justify-center font-bold text-xl flex-shrink-0">
+                  {index + 1}
                 </div>
+                {index < steps.length - 1 && (
+                  <div className="w-1 h-16 bg-gray-200" />
+                )}
+              </div>
 
-                {/* Content */}
-                <div className="flex-1 bg-gray-50 rounded-2xl p-8 border border-gray-100">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-emerald-700/20 rounded-xl flex items-center justify-center flex-shrink-0">
-  <Icon className="w-6 h-6 text-[#2d9e6b]" />
-</div>
-                    <div>
-                      <h3 className="text-2xl font-semibold text-[#111827] mb-2">
-                        {step.title}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed">
-                        {step.description}
-                      </p>
-                    </div>
+              {/* Content card */}
+              <div className="flex-1 bg-gray-50 rounded-2xl p-8 border border-gray-100">
+                <div className="flex items-start gap-4">
+                  <IconBox icon={step.icon} size="md" />
+                  <div>
+                    <h3 className="text-2xl font-semibold text-[#111827] mb-2">
+                      {t(step.title)}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {t(step.description)}
+                    </p>
                   </div>
                 </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>

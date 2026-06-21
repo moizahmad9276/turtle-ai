@@ -13,7 +13,9 @@ app.use(express.json());
 app.use("/api/translations", translationsRoute);
 
 // Health check
-app.get("/health", (_req, res) => res.json({ status: "ok", service: "TurtleAI API" }));
+app.get("/health", (_req, res) =>
+  res.json({ status: "ok", service: "TurtleAI API" }),
+);
 
 app.use(errorHandler);
 
