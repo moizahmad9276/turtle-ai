@@ -48,7 +48,7 @@ export function FeaturedUseCase() {
   };
 
   return (
-    <section id="demo" className="bg-[#0a1f14] text-white py-24 px-6">
+    <section id="demo" className="bg-transparent text-white py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <SectionHeader
           eyebrow={t("featured.eyebrow")}
@@ -60,7 +60,7 @@ export function FeaturedUseCase() {
           {results.map(({ icon, label }, i) => (
             <div
               key={i}
-              className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 flex items-center gap-4"
+              className="bg-gradient-to-br glass-card rounded-2xl p-6 border border-gray-700 flex items-center gap-4"
             >
               <IconBox icon={icon} size="md" />
               <p className="font-semibold text-lg">{t(label)}</p>

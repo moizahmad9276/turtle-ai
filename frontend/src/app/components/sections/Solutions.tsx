@@ -47,7 +47,7 @@ export function Solutions() {
   const { t } = useLanguage();
 
   return (
-    <section id="solutions" className="bg-[#0a1f14] text-white py-24 px-6">
+    <section id="solutions" className="bg-transparent text-white py-24 px-6">
       <div className="max-w-7xl mx-auto">
         <SectionHeader title={t("solutions.title")} />
 
@@ -57,7 +57,7 @@ export function Solutions() {
             return (
               <div
                 key={index}
-                className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-[#2d9e6b] transition-all group cursor-pointer"
+                className="bg-gradient-to-br glass-card rounded-2xl p-8 border border-gray-700 hover:border-[#2d9e6b] transition-all group cursor-pointer"
               >
                 <div className="w-14 h-14 bg-emerald-700/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-700/30 transition-all">
                   <IconBox icon={Icon} size="lg" />

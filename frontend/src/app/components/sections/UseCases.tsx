@@ -115,7 +115,7 @@ export function UseCases() {
   const current = useCases[active];
 
   return (
-    <section id="use-cases" className="bg-[#0a1f14] text-white py-24 px-6">
+    <section id="use-cases" className="bg-transparent text-white py-24 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <SectionHeader
@@ -132,8 +132,8 @@ export function UseCases() {
                 key={i}
                 onClick={() => setActive(i)}
                 className={`flex items-center gap-3 px-5 py-4 rounded-xl font-semibold text-left whitespace-nowrap lg:whitespace-normal transition-all flex-shrink-0 lg:flex-shrink ${active === i
-                    ? "bg-[#2d9e6b] text-white shadow-lg shadow-emerald-500/30"
-                    : "bg-emerald-950/40 border border-emerald-900 text-gray-400 hover:border-[#2d9e6b] hover:text-white"
+                  ? "bg-[#2d9e6b] text-white shadow-lg shadow-emerald-500/30"
+                  : "bg-emerald-950/40 border border-emerald-900 text-gray-400 hover:border-[#2d9e6b] hover:text-white"
                   }`}
               >
                 <span className="text-2xl">{uc.emoji}</span>
@@ -181,8 +181,8 @@ export function UseCases() {
                   )}
                   <div
                     className={`max-w-[75%] px-4 py-3 rounded-2xl text-sm leading-relaxed ${msg.role === "agent"
-                        ? "bg-emerald-950 border border-emerald-800 text-gray-200 rounded-tl-none"
-                        : "bg-[#2d9e6b] text-white rounded-tr-none"
+                      ? "bg-emerald-950 border border-emerald-800 text-gray-200 rounded-tl-none"
+                      : "bg-[#2d9e6b] text-white rounded-tr-none"
                       }`}
                   >
                     {t(msg.text)}

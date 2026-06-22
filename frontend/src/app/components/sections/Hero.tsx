@@ -15,13 +15,13 @@ export function Hero() {
   const { openBookDemo } = useBookDemo();
 
   return (
-    <section className="bg-[#0a1f14] text-white py-24 px-6 min-h-screen flex items-center">
+    <section className="bg-transparent text-white py-24 px-6 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left */}
           <div className="space-y-8">
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-              {t("hero.title")}
+              <span className="text-gradient">{t("hero.title")}</span>
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
               {t("hero.subtitle")}
@@ -46,7 +46,7 @@ export function Hero() {
 
           {/* Right — Dashboard mockup */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 shadow-2xl border border-gray-700 space-y-4">
+            <div className="bg-gradient-to-br glass-card rounded-2xl p-6 shadow-2xl border border-gray-700 space-y-4">
               {/* Header */}
               <div className="flex items-center justify-between pb-4 border-b border-gray-700">
                 <div className="flex items-center gap-3">

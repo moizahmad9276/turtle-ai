@@ -30,10 +30,10 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fade-in">
       <div className="absolute inset-0" onClick={onClose} />
 
-      <div className="relative w-full max-w-4xl max-h-[85vh] bg-[#0a1f14] border border-emerald-900 rounded-2xl flex flex-col shadow-2xl text-white overflow-hidden">
+      <div className="relative w-full max-w-4xl max-h-[85vh] bg-transparent border border-emerald-900 rounded-2xl flex flex-col shadow-2xl text-white overflow-hidden">
 
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-emerald-900 bg-[#0a1f14]">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-emerald-900 bg-transparent">
           <div>
             <h3 className="text-[#2d9e6b] font-bold text-xl">TurtleAI</h3>
             <p className="text-xs text-gray-400 mt-0.5">{t("terms.badge")}</p>
@@ -139,7 +139,7 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
         </div>
 
         {/* Footer */}
-        <div className="flex justify-end p-4 border-t border-emerald-900 bg-[#0a1f14]">
+        <div className="flex justify-end p-4 border-t border-emerald-900 bg-transparent">
           <button onClick={onClose} className="px-5 py-2 bg-emerald-800 text-white rounded-xl hover:bg-[#2d9e6b] font-medium text-sm transition-all shadow-md">
             {t("terms.accept")}
           </button>

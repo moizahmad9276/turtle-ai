@@ -97,7 +97,7 @@ function QuoteModal({
   };
 
   const inputClass = (field: keyof FormErrors) =>
-    `w-full bg-[#0a1f14] border rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none transition-colors ${errors[field]
+    `w-full bg-transparent border rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none transition-colors ${errors[field]
       ? "border-red-500 focus:border-red-400"
       : "border-gray-700 focus:border-[#2d9e6b]"
     }`;
@@ -341,7 +341,7 @@ export function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="bg-[#0a1f14] text-white py-24 px-6">
+    <section id="pricing" className="bg-transparent text-white py-24 px-6">
       <div className="max-w-7xl mx-auto">
         <SectionHeader
           title={t("pricing.title")}
@@ -378,7 +378,7 @@ export function Pricing() {
                   onClick={() => setActivePlan(plan.name)}
                   className={`rounded-3xl p-8 cursor-pointer transition-all duration-200 ${isActive
                     ? "bg-gradient-to-br from-[#2d9e6b] to-[#1a7a50] border-2 border-white shadow-2xl shadow-emerald-500/40 scale-[1.02]"
-                    : "bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 hover:border-[#2d9e6b] hover:shadow-xl hover:shadow-emerald-500/20 hover:scale-[1.01]"
+                    : "bg-gradient-to-br glass-card rounded-2xl border border-gray-700 hover:border-[#2d9e6b] hover:shadow-xl hover:shadow-emerald-500/20 hover:scale-[1.01]"
                     }`}
                 >
                   {/* Most Popular badge — only when Growth is active */}

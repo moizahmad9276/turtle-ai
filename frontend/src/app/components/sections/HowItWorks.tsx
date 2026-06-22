@@ -35,9 +35,9 @@ export function HowItWorks() {
   const { t } = useLanguage();
 
   return (
-    <section id="how-it-works" className="bg-white py-24 px-6">
+    <section id="how-it-works" className="bg-transparent py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <SectionHeader title={t("howItWorks.title")} light={false} />
+        <SectionHeader title={t("howItWorks.title")} />
 
         <div className="space-y-8">
           {steps.map((step, index) => (

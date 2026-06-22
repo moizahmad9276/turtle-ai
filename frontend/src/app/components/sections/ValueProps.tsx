@@ -30,9 +30,9 @@ export function ValueProps() {
   const { t } = useLanguage();
 
   return (
-    <section className="bg-white py-24 px-6">
+    <section className="bg-transparent py-24 px-6">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader title={t("valueProps.title")} light={false} />
+        <SectionHeader title={t("valueProps.title")} />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {valueProps.map((prop, index) => {
@@ -45,6 +45,7 @@ export function ValueProps() {
                 <div className="w-14 h-14 bg-emerald-700/20 rounded-xl flex items-center justify-center mb-6">
                   <IconBox icon={Icon} size="lg" />
                 </div>
+
                 <h3 className="text-xl font-semibold text-[#111827] mb-3">
                   {t(prop.title)}
                 </h3>

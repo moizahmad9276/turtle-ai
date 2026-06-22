@@ -57,7 +57,7 @@ export function Footer() {
   const [showPrivacy, setShowPrivacy] = useState(false);
   const [showTerms, setShowTerms] = useState(false);
   return (
-    <footer className="bg-[#0a1f14] border-t border-emerald-900 text-white py-12 px-6">
+    <footer className="bg-transparent border-t border-emerald-900 text-white py-12 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}

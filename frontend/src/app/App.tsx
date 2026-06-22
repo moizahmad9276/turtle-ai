@@ -12,24 +12,31 @@ import { FounderTrust } from "./components/sections/FounderTrust";
 import { FinalCTA } from "./components/sections/FinalCTA";
 import { UseCases } from "./components/sections/Usecases";
 import { LanguageProvider } from "../context/LanguageContext";
+import { PremiumBackground } from "./components/ui/AnimatedBackground";
 
 export default function App() {
   return (
     <LanguageProvider>
       <BookDemoProvider>
-        <div className="w-full">
-          <Header />
-          <Hero />
-          <UseCases />
-          <ValueProps />
-          <Solutions />
-          <Industries />
-          <FeaturedUseCase />
-          <HowItWorks />
-          <Pricing />
-          <FounderTrust />
-          <FinalCTA />
-          <Footer />
+        <div className="w-full min-h-screen bg-[#0a1f14] relative">
+          <div className="fixed inset-0 z-0 pointer-events-none">
+            <PremiumBackground />
+          </div>
+          <div className="relative z-10">
+            <Header />
+            <Hero />
+            <UseCases />
+            <ValueProps />
+            <Solutions />
+            <Industries />
+            <FeaturedUseCase />
+            <HowItWorks />
+            <Pricing />
+            <FounderTrust />
+            <FinalCTA />
+            <Footer />
+          </div>
+
         </div>
       </BookDemoProvider>
     </LanguageProvider>

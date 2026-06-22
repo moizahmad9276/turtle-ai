@@ -97,9 +97,9 @@ export function Industries() {
   const detail = industryDetails[industries[selected]];
 
   return (
-    <section ref={sectionRef} id="industries" className="bg-white py-24 px-6">
+    <section ref={sectionRef} id="industries" className="bg-transparent py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <SectionHeader title={t("industries.title")} light={false} />
+        <SectionHeader title={t("industries.title")} />
 
         {/* Pills */}
         <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -142,11 +142,11 @@ export function Industries() {
               </ul>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-xl p-6">
+            <div className="bg-[#0a1f14] border border-gray-200 rounded-xl p-6">
               <p className="text-[#2d9e6b] font-semibold uppercase tracking-wider text-xs mb-3">
                 {t("industries.example")}
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-white leading-relaxed">
                 {t(detail.example)}
               </p>
             </div>

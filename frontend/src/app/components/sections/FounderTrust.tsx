@@ -1,5 +1,6 @@
 import { User } from "lucide-react";
 import { useLanguage } from "../../../context/LanguageContext";
+import { SectionHeader } from "../ui/SectionHeader";
 
 const founders = [
   {
@@ -18,15 +19,14 @@ export function FounderTrust() {
   const { t } = useLanguage();
 
   return (
-    <section className="bg-white py-24 px-6">
+    <section className="bg-transparent py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold text-[#111827] mb-8">
-            {t("founderTrust.title")}
-          </h2>
-          <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            {t("founderTrust.desc")}
-          </p>
+          <SectionHeader
+            title={t("founderTrust.title")}
+            subtitle={t("founderTrust.desc")}
+          />
+
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">

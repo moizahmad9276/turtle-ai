@@ -8,7 +8,7 @@ export function FinalCTA() {
   const { t } = useLanguage();
 
   return (
-    <section className="bg-[#0a1f14] text-white py-32 px-6">
+    <section className="bg-transparent text-white py-32 px-6">
       <div className="max-w-4xl mx-auto text-center space-y-8">
         <h2 className="text-4xl lg:text-6xl font-bold">
           {t("finalCta.title")}
