@@ -35,7 +35,7 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-emerald-900 bg-transparent">
           <div>
-            <h3 className="text-[#2d9e6b] font-bold text-xl">TurtleAI</h3>
+            <h3 className="text-[#2d9e6b] font-bold text-xl">TurtleLabs AI</h3>
             <p className="text-xs text-gray-400 mt-0.5">{t("terms.badge")}</p>
           </div>
           <button onClick={onClose} className="p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-emerald-950 transition-colors" aria-label="Close modal">
@@ -126,11 +126,11 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
             <h2 className="text-2xl font-semibold text-white mb-3">{t("terms.s13.title")}</h2>
             <p>{t("terms.s13.intro")}</p>
             <div className="mt-4 bg-emerald-950/50 border border-emerald-800 rounded-xl p-5">
-              <p className="font-semibold text-white">TurtleAI</p>
+              <p className="font-semibold text-white">TurtleLabs AI</p>
               <p className="mt-1 text-sm">
                 {t("terms.email")}{" "}
-                <a href="mailto:hello@turtleai.com" className="text-[#2d9e6b] hover:underline">
-                  hello@turtleai.com
+                <a href="mailto:hello@turtlelabs-ai.com" className="text-[#2d9e6b] hover:underline">
+                  hello@turtlelabs-ai.com
                 </a>
               </p>
             </div>

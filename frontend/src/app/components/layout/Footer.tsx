@@ -63,7 +63,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-4">
-              <img src={logo} alt="TurtleAI" className="h-20 w-auto" />
+              <img src={logo} alt="TurtleLabs AI" className="h-20 w-auto" />
             </div>
             <p className="text-gray-400 leading-relaxed">
               {t("footer.brandDescription")}
@@ -87,11 +87,11 @@ export function Footer() {
             <h3 className="font-semibold mb-4">{t("footer.contact")}</h3>
             <div className="space-y-3">
               <a
-                href="mailto:hello@turtleai.com"
+                href="mailto:hello@turtlelabs-ai.com"
                 className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                hello@turtleai.com
+                hello@turtlelabs-ai.com
               </a>
 
               {/* Social Icons */}

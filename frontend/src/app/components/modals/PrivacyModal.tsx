@@ -34,7 +34,7 @@ export function PrivacyModal({ isOpen, onClose }: PrivacyModalProps) {
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-emerald-900 bg-transparent">
           <div>
-            <h3 className="text-[#2d9e6b] font-bold text-xl">TurtleAI</h3>
+            <h3 className="text-[#2d9e6b] font-bold text-xl">TurtleLabs AI</h3>
             <p className="text-xs text-gray-400 mt-0.5">{t("privacy.badge")}</p>
           </div>
           <button
@@ -157,10 +157,10 @@ export function PrivacyModal({ isOpen, onClose }: PrivacyModalProps) {
             <p className="mt-4">
               {t("privacy.s7.contact")}{" "}
               <a
-                href="mailto:hello@turtleai.com"
+                href="mailto:hello@turtlelabs-ai.com"
                 className="text-[#2d9e6b] hover:underline"
               >
-                hello@turtleai.com
+                hello@turtlelabs-ai.com
               </a>
               .
             </p>
@@ -193,14 +193,14 @@ export function PrivacyModal({ isOpen, onClose }: PrivacyModalProps) {
             </h2>
             <p>{t("privacy.s11.intro")}</p>
             <div className="mt-4 bg-emerald-950/50 border border-emerald-800 rounded-xl p-5">
-              <p className="font-semibold text-white">TurtleAI</p>
+              <p className="font-semibold text-white">TurtleLabs AI</p>
               <p className="mt-1 text-sm">
                 {t("terms.email")}{" "}
                 <a
-                  href="mailto:hello@turtleai.com"
+                  href="mailto:hello@turtlelabs-ai.com"
                   className="text-[#2d9e6b] hover:underline"
                 >
-                  hello@turtleai.com
+                  hello@turtlelabs-ai.com
                 </a>
               </p>
             </div>

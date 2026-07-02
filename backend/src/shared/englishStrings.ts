@@ -10,11 +10,11 @@ export const englishStrings: Record<string, string> = {
   // Hero
   "hero.title": "AI Agents Built to Automate Your Business.",
   "hero.subtitle":
-    "TurtleAI designs and deploys AI agents that handle customer conversations, qualify leads, book appointments, and automate workflows — integrated into your existing tools.",
+    "TurtleLabs AI designs and deploys AI agents that handle customer conversations, qualify leads, book appointments, and automate workflows — integrated into your existing tools.",
   "hero.bookDemo": "Book a Demo",
   "hero.seeUseCases": "See Use Cases",
   "hero.fastSetup": "Fast setup. Secure. Scalable.",
-  "hero.dashboard": "TurtleAI Dashboard",
+  "hero.dashboard": "TurtleLabs AI Dashboard",
   "hero.chatWidgetPreview": "Chat Widget Preview",
   "hero.chatPreview": "Hi there!",
   "hero.liveActive": "Live & Active",
@@ -34,7 +34,7 @@ export const englishStrings: Record<string, string> = {
   "useCases.realCall": "Real Call Scenarios",
   "useCases.title": "Watch It Handle Your Scenarios",
   "useCases.subtitle":
-    "Pick your industry and see exactly how TurtleAI answers, qualifies, and books — 24/7.",
+    "Pick your industry and see exactly how TurtleLabs AI answers, qualifies, and books — 24/7.",
   "useCases.liveDemo": "Live demo",
   "useCases.result": "Result:",
 
@@ -154,9 +154,10 @@ export const englishStrings: Record<string, string> = {
   "useCases.restaurant.conv6.caller": "Michael Torres.",
   "useCases.restaurant.conv7.agent":
     "Perfect, Mr Torres — Saturday 7:30 for 4, birthday celebration noted. We'll have something special ready. See you then!",
+  "useCases.tryDemo": "Try Live Demo",
 
   // Value Props
-  "valueProps.title": "What TurtleAI Agents Can Do",
+  "valueProps.title": "What TurtleLabs AI Agents Can Do",
   "valueProps.lead.title": "Lead Generation & Qualification",
   "valueProps.lead.desc":
     "Capture and qualify leads automatically by asking the right questions at the right time.",
@@ -194,7 +195,7 @@ export const englishStrings: Record<string, string> = {
   // Industries
   "industries.title": "Built for Multiple Industries",
   "industries.subtitle":
-    "Select an industry to see what TurtleAI can automate for you.",
+    "Select an industry to see what TurtleLabs AI can automate for you.",
   "industries.automate": "What we automate",
   "industries.example": "Real example",
   "industries.cta": "Build this for my business →",
@@ -204,7 +205,7 @@ export const englishStrings: Record<string, string> = {
   "industries.professional": "Professional Services",
   "industries.education": "Education",
   "industries.saas": "SaaS",
-  "industries.turtleAIFor": "TurtleAI for",
+  "industries.turtleAIFor": "TurtleLabs AI for",
 
   // How It Works
   "howItWorks.title": "From Idea to Live Agent in Days",
@@ -297,9 +298,9 @@ export const englishStrings: Record<string, string> = {
     "AI agents that automate customer conversations, qualify leads, and integrate with your business tools.",
   "footer.quickLinks": "Quick Links",
   "footer.contact": "Contact",
-  "footer.copyright": "© 2026 TurtleAI. All rights reserved.",
+  "footer.copyright": "© 2026 TurtleLabs AI. All rights reserved.",
   "footer.brandDescription":
-    "TurtleAI automates customer conversations, qualifies leads, and integrates with your business tools.",
+    "TurtleLabs AI automates customer conversations, qualifies leads, and integrates with your business tools.",
   "footer.privacyPolicy": "Privacy Policy",
   "footer.termsOfService": "Terms of Service",
   "footer.solutions": "Solutions",
@@ -322,17 +323,17 @@ export const englishStrings: Record<string, string> = {
   // FounderTrust section
   "founderTrust.title": "Founder-Led, Business-First AI",
   "founderTrust.desc":
-    "TurtleAI focuses on practical, ROI-driven agents — not hype. We build reliable systems that your team can use immediately. Every agent is designed with real business outcomes in mind: more leads, better customer service, and automated workflows that actually work.",
+    "TurtleLabs AI focuses on practical, ROI-driven agents — not hype. We build reliable systems that your team can use immediately. Every agent is designed with real business outcomes in mind: more leads, better customer service, and automated workflows that actually work.",
 
   // Founder 1
   "founderTrust.role": "Founder & CEO",
   "founderTrust.bio":
-    "With years of experience in AI and business automation, I built TurtleAI to help companies implement intelligent agents that drive real results. We're here to make AI accessible and practical for businesses of all sizes.",
+    "With years of experience in AI and business automation, I built TurtleLabs AI to help companies implement intelligent agents that drive real results. We're here to make AI accessible and practical for businesses of all sizes.",
 
   // Founder 2
   "founderTrust.role2": "Co-Founder & Managing Director",
   "founderTrust.bio2":
-    "As Co-Founder and Managing Director of TurtleAI, I am responsible for shaping the company's vision, driving strategic growth, and leading the development of AI-powered solutions that help businesses automate processes and unlock new opportunities. I work closely with our team and partners to turn innovative AI technology into practical solutions that deliver measurable business value.",
+    "As Co-Founder and Managing Director of TurtleLabs AI, I am responsible for shaping the company's vision, driving strategic growth, and leading the development of AI-powered solutions that help businesses automate processes and unlock new opportunities. I work closely with our team and partners to turn innovative AI technology into practical solutions that deliver measurable business value.",
 
   // Industries use cases & examples
   "industries.re.uc1": "Qualify buyer & seller leads 24/7",
@@ -382,7 +383,7 @@ export const englishStrings: Record<string, string> = {
   "privacy.understand": "I Understand",
   "privacy.s1.title": "1. Introduction",
   "privacy.s1.text":
-    'TurtleAI ("we", "our", or "us") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our AI agent services. Please read this policy carefully. If you disagree with its terms, please discontinue use of our services.',
+    'TurtleLabs AI ("we", "our", or "us") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our AI agent services. Please read this policy carefully. If you disagree with its terms, please discontinue use of our services.',
   "privacy.s2.title": "2. Information We Collect",
   "privacy.s2.intro": "We may collect the following types of information:",
   "privacy.s2.item1":
@@ -459,13 +460,13 @@ export const englishStrings: Record<string, string> = {
   "terms.accept": "Accept Terms",
   "terms.s1.title": "1. Acceptance of Terms",
   "terms.s1.text":
-    "By accessing or using TurtleAI's website or services, you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to these terms, you may not use our services. These terms apply to all visitors, clients, and others who access or use our services.",
+    "By accessing or using TurtleLabs AI's website or services, you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to these terms, you may not use our services. These terms apply to all visitors, clients, and others who access or use our services.",
   "terms.s2.title": "2. Description of Services",
   "terms.s2.text":
-    "TurtleAI provides AI agent design, development, and deployment services including but not limited to: website chatbots, WhatsApp agents, lead qualification systems, appointment booking agents, customer support automation, and internal knowledge assistants. Specific deliverables and timelines are defined in individual service agreements or proposals.",
+    "TurtleLabs AI provides AI agent design, development, and deployment services including but not limited to: website chatbots, WhatsApp agents, lead qualification systems, appointment booking agents, customer support automation, and internal knowledge assistants. Specific deliverables and timelines are defined in individual service agreements or proposals.",
   "terms.s3.title": "3. Use of Services",
   "terms.s3.intro":
-    "You agree to use TurtleAI services only for lawful purposes. You must not:",
+    "You agree to use TurtleLabs AI services only for lawful purposes. You must not:",
   "terms.s3.item1":
     "Use our services to transmit unlawful, harmful, threatening, or fraudulent content.",
   "terms.s3.item2":
@@ -486,28 +487,28 @@ export const englishStrings: Record<string, string> = {
   "terms.s4.item3": "Invoices are due within 14 days of issuance.",
   "terms.s4.item4": "Late payments may incur a 2% monthly interest charge.",
   "terms.s4.item5":
-    "TurtleAI reserves the right to suspend services for overdue accounts.",
+    "TurtleLabs AI reserves the right to suspend services for overdue accounts.",
   "terms.s5.title": "5. Intellectual Property",
   "terms.s5.text":
-    "All AI agent frameworks, templates, methodologies, and proprietary systems developed by TurtleAI remain the intellectual property of TurtleAI. Upon full payment, clients receive a license to use the delivered agent for their business purposes. Custom conversation flows and knowledge bases built specifically for a client are owned by that client upon final payment.",
+    "All AI agent frameworks, templates, methodologies, and proprietary systems developed by TurtleLabs AI remain the intellectual property of TurtleLabs AI. Upon full payment, clients receive a license to use the delivered agent for their business purposes. Custom conversation flows and knowledge bases built specifically for a client are owned by that client upon final payment.",
   "terms.s6.title": "6. Confidentiality",
   "terms.s6.text":
-    "Both parties agree to keep confidential any proprietary information shared during the course of the engagement. TurtleAI will not disclose your business information, conversation data, or technical requirements to third parties without your written consent, except as required by law or as necessary to deliver the services.",
+    "Both parties agree to keep confidential any proprietary information shared during the course of the engagement. TurtleLabs AI will not disclose your business information, conversation data, or technical requirements to third parties without your written consent, except as required by law or as necessary to deliver the services.",
   "terms.s7.title": "7. Data and AI Usage",
   "terms.s7.text":
-    "Conversation data processed through AI agents deployed by TurtleAI is used solely to operate and improve the specific agent for your business. We do not use your customer conversation data to train general AI models or share it with other clients. Data handling is subject to our Privacy Policy and any applicable data processing agreements.",
+    "Conversation data processed through AI agents deployed by TurtleLabs AI is used solely to operate and improve the specific agent for your business. We do not use your customer conversation data to train general AI models or share it with other clients. Data handling is subject to our Privacy Policy and any applicable data processing agreements.",
   "terms.s8.title": "8. Limitation of Liability",
   "terms.s8.text":
-    "TurtleAI's liability for any claim arising from these terms or the services provided shall not exceed the total fees paid by the client in the three months preceding the claim. TurtleAI is not liable for indirect, incidental, consequential, or punitive damages, including lost profits or data loss, even if advised of the possibility of such damages.",
+    "TurtleLabs AI's liability for any claim arising from these terms or the services provided shall not exceed the total fees paid by the client in the three months preceding the claim. TurtleLabs AI is not liable for indirect, incidental, consequential, or punitive damages, including lost profits or data loss, even if advised of the possibility of such damages.",
   "terms.s9.title": "9. Disclaimer of Warranties",
   "terms.s9.text":
-    'Our services are provided "as is" without warranties of any kind, either express or implied. TurtleAI does not warrant that AI agents will be error-free, uninterrupted, or meet all your specific requirements. We make no guarantees regarding specific business outcomes such as lead conversion rates or revenue increases.',
+    'Our services are provided "as is" without warranties of any kind, either express or implied. TurtleLabs AI does not warrant that AI agents will be error-free, uninterrupted, or meet all your specific requirements. We make no guarantees regarding specific business outcomes such as lead conversion rates or revenue increases.',
   "terms.s10.title": "10. Termination",
   "terms.s10.text":
-    "Either party may terminate services with 30 days written notice. TurtleAI reserves the right to terminate services immediately for breach of these terms, non-payment, or illegal use. Upon termination, all outstanding fees become immediately due and payable. Client data will be returned or deleted within 30 days of termination.",
+    "Either party may terminate services with 30 days written notice. TurtleLabs AI reserves the right to terminate services immediately for breach of these terms, non-payment, or illegal use. Upon termination, all outstanding fees become immediately due and payable. Client data will be returned or deleted within 30 days of termination.",
   "terms.s11.title": "11. Governing Law",
   "terms.s11.text":
-    "These Terms of Service are governed by and construed in accordance with applicable laws. Any disputes arising from these terms shall be resolved through good-faith negotiation first, and if unresolved, through binding arbitration or the courts of the jurisdiction in which TurtleAI operates.",
+    "These Terms of Service are governed by and construed in accordance with applicable laws. Any disputes arising from these terms shall be resolved through good-faith negotiation first, and if unresolved, through binding arbitration or the courts of the jurisdiction in which TurtleLabs AI operates.",
   "terms.s12.title": "12. Changes to Terms",
   "terms.s12.text":
     "We reserve the right to modify these Terms of Service at any time. We will notify active clients of material changes via email. Continued use of our services after changes are posted constitutes acceptance of the revised terms.",

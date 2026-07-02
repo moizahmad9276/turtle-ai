@@ -1,6 +1,6 @@
-# Turtle AI
+# TurtleLabs AI
 
-This is a code bundle for Turtle AI. The original project is available at https://www.figma.com/design/6YeIHV8HlvGl740ryT0BnK/Design-Himana-AI-Landing-Page.
+This is a code bundle for TurtleLabs AI. The original project is available at https://www.figma.com/design/6YeIHV8HlvGl740ryT0BnK/Design-Himana-AI-Landing-Page.
 
 ## Running the code
 

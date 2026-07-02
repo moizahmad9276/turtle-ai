@@ -35,7 +35,17 @@ async function translateText(text: string, targetLang: string, retries = 3): Pro
     try {
       await new Promise(r => setTimeout(r, 1000));
       const result = await translate(text, { from: "en", to: targetLang });
-      return result;
+
+      // Protect brand name from translation
+      const cleaned = result
+        .replace(/TurtleAI/gi, "TurtleLabs AI")
+        .replace(/ٹرٹل اے آئی/g, "TurtleLabs AI")
+        .replace(/Turtle KI/g, "TurtleLabs AI")
+        .replace(/TurtleIA/g, "TurtleLabs AI")
+        .replace(/Turtle Labs KI/g, "TurtleLabs AI")
+        .replace(/TurtleLabs KI/g, "TurtleLabs AI");
+
+      return cleaned;
     } catch (err: any) {
       if (i < retries - 1) {
         const wait = 3000 * (i + 1);
@@ -53,7 +63,7 @@ async function translateText(text: string, targetLang: string, retries = 3): Pro
 
 // ─── SEED ────────────────────────────────────────────────────────────────────
 async function seed() {
-  console.log("🐢 TurtleAI — Starting translation seed...\n");
+  console.log("🐢 TurtleLabs AI — Starting translation seed...\n");
 
   const keys = Object.keys(englishStrings);
   let updated = 0;

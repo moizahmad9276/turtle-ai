@@ -14,11 +14,11 @@ app.use("/api/translations", translationsRoute);
 
 // Health check
 app.get("/health", (_req, res) =>
-  res.json({ status: "ok", service: "TurtleAI API" }),
+  res.json({ status: "ok", service: "TurtleLabs AI API" }),
 );
 
 app.use(errorHandler);
 
 app.listen(PORT, () => {
-  console.log(`🐢 TurtleAI API running on http://localhost:${PORT}`);
+  console.log(`🐢 TurtleLabs AI API running on http://localhost:${PORT}`);
 });

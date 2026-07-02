@@ -3,6 +3,19 @@ import logo from "../../../assets/logo.png";
 import { useLanguage } from "../../../context/LanguageContext";
 import { SectionHeader } from "../ui/SectionHeader";
 
+declare global {
+  interface Window {
+    voiceflow?: {
+      chat?: {
+        load: (config: unknown) => void;
+        open: () => void;
+        close: () => void;
+      };
+    };
+    vfReady?: boolean;
+  }
+}
+
 type Message = {
   role: "agent" | "caller";
   text: string;
@@ -109,6 +122,19 @@ const useCases: UseCase[] = [
   },
 ];
 
+const openIndustryDemo = (industry: string) => {
+  if (window.voiceflow?.chat) {
+    window.voiceflow.chat.open();
+    // Small delay to let chat open before sending message
+    setTimeout(() => {
+      // Dispatch a custom event Voiceflow can pick up
+      window.dispatchEvent(new CustomEvent("vf:open", {
+        detail: { industry }
+      }));
+    }, 500);
+  }
+};
+
 export function UseCases() {
   const { t } = useLanguage();
   const [active, setActive] = useState<number>(0);
@@ -174,7 +200,7 @@ export function UseCases() {
                     <div className="w-7 h-7 rounded-full overflow-hidden mr-2 flex-shrink-0 mt-1">
                       <img
                         src={logo}
-                        alt="TurtleAI"
+                        alt="TurtleLabs AI"
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -201,22 +227,26 @@ export function UseCases() {
               <div className="flex items-start gap-3">
                 <div className="w-5 h-5 bg-emerald-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <svg viewBox="0 0 20 20" fill="none" className="w-3 h-3">
-                    <path
-                      d="M4 10.5l4 4 8-8"
-                      stroke="#4ade80"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
+                    <path d="M4 10.5l4 4 8-8" stroke="#4ade80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
                 <p className="text-sm text-gray-300">
-                  <span className="text-emerald-400 font-semibold">
-                    {t("useCases.result")}{" "}
-                  </span>
+                  <span className="text-emerald-400 font-semibold">{t("useCases.result")} </span>
                   {t(current.outcome)}
                 </p>
               </div>
+
+              {/* Try Demo button */}
+              <button
+                onClick={() => openIndustryDemo(t(current.industry))}
+                className="flex items-center gap-2 bg-[#2d9e6b] hover:bg-[#1a7a50] text-white text-sm font-semibold px-4 py-2 rounded-lg transition-all shadow-lg shadow-emerald-500/30 whitespace-nowrap flex-shrink-0"
+              >
+                <svg viewBox="0 0 20 20" fill="none" className="w-4 h-4">
+                  <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="1.5" />
+                  <path d="M8 7l5 3-5 3V7z" fill="currentColor" />
+                </svg>
+                {t("useCases.tryDemo")}
+              </button>
             </div>
           </div>
         </div>

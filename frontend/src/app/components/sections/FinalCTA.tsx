@@ -22,7 +22,7 @@ export function FinalCTA() {
             <ArrowRight className="w-5 h-5 inline ml-2" />
           </GreenButton>
           <a
-            href="mailto:hello@turtleai.com"
+            href="mailto:hello@turtlelabs-ai.com"
             className="border-2 border-white text-white px-10 py-5 rounded-xl font-semibold text-lg hover:bg-white hover:text-[#0a1f14] transition-all inline-flex items-center justify-center gap-3"
           >
             <Mail className="w-5 h-5" />

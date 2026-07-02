@@ -26,7 +26,7 @@ export function Header() {
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <img src={logo} alt="TurtleAI" className="h-20 w-auto" />
+            <img src={logo} alt="TurtleLabs AI" className="h-20 w-auto" />
           </div>
 
           {/* Desktop Navigation */}

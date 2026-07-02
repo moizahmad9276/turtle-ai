@@ -189,7 +189,7 @@ function QuoteModal({
                 </label>
                 <input
                   type="email"
-                  placeholder="jane@turtleai.com"
+                  placeholder="jane@turtlelabs-ai.com"
                   value={form.email}
                   onChange={(e) => {
                     setForm({ ...form, email: e.target.value });
@@ -207,7 +207,7 @@ function QuoteModal({
                 </label>
                 <input
                   type="text"
-                  placeholder="TurtleAI"
+                  placeholder="TurtleLabs AI"
                   value={form.company}
                   onChange={(e) => {
                     setForm({ ...form, company: e.target.value });

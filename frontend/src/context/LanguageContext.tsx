@@ -17,6 +17,19 @@ export interface Language {
   flag: string;
 }
 
+declare global {
+  interface Window {
+    voiceflow?: {
+      chat?: {
+        load: (config: unknown) => void;
+        open: () => void;
+        close: () => void;
+      };
+    };
+    vfReady?: boolean;
+  }
+}
+
 interface LanguageContextValue {
   language: LanguageCode;
   setLanguage: (lang: LanguageCode) => void;
@@ -39,14 +52,14 @@ export const LANGUAGES: Language[] = [
 
 const RTL_LANGUAGES: LanguageCode[] = ["ar", "ur"];
 
-const CACHE_KEY = (lang: string) => `turtleai_translations_${lang}`;
+const CACHE_KEY = (lang: string) => `turtlelabs-ai_translations_${lang}`;
 const CACHE_TTL = 60 * 60 * 1000; // 1 hour in ms
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
 // ─── Context ─────────────────────────────────────────────────────────────────
 const LanguageContext = createContext<LanguageContextValue>({
   language: "en",
-  setLanguage: () => {},
+  setLanguage: () => { },
   t: (key) => key,
   languages: LANGUAGES,
   loading: false,
@@ -56,7 +69,7 @@ const LanguageContext = createContext<LanguageContextValue>({
 // ─── Provider ─────────────────────────────────────────────────────────────────
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<LanguageCode>(() => {
-    return (localStorage.getItem("turtleai_lang") as LanguageCode) || "en";
+    return (localStorage.getItem("turtlelabs-ai_lang") as LanguageCode) || "en";
   });
 
   const [translations, setTranslations] =
@@ -85,7 +98,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
           setLoading(false);
 
           // Refresh cache in background (stale-while-revalidate)
-          fetchAndCache(lang).catch(() => {});
+          fetchAndCache(lang).catch(() => { });
           return;
         }
       }
@@ -141,8 +154,23 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, [language, loadTranslations]);
 
   const setLanguage = (lang: LanguageCode) => {
-    localStorage.setItem("turtleai_lang", lang);
+    localStorage.setItem("turtlelabs-ai_lang", lang);
     setLanguageState(lang);
+
+    // Reload Voiceflow with new language
+    if (window.voiceflow?.chat) {
+      window.voiceflow.chat.load({
+        verify: { projectID: "6a44eb6bf15796a71d6728f3" },
+        url: "https://general-runtime.voiceflow.com",
+        voice: { url: "https://runtime-api.voiceflow.com" },
+        launch: {
+          event: {
+            type: "launch",
+            payload: { language: lang }
+          }
+        }
+      });
+    }
   };
 
   // ── Translation function ─────────────────────────────────────────────────
